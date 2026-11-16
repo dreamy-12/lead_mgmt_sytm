@@ -1,0 +1,124 @@
+# ===========Accounts==========
+# api call for user creation
+###
+POST http://127.0.0.1:8000/accounts/register/
+Content-Type:application/json
+
+{
+    "username":"django",
+    "password":"password@123",
+    "email":"django@gmail.com",
+    "phone":"8521479630"
+}
+# ----------------------------------------------------------
+# api call for user creation
+###
+POST http://127.0.0.1:8000/accounts/register/
+Content-Type:application/json
+
+{
+    "username":"react",
+    "password":"password@123",
+    "email":"react@gmail.com",
+    "phone":"8521475230"
+}
+# ----------------------------------------------------------
+# api call for fetching token 
+###
+POST http://127.0.0.1:8000/accounts/login/
+Content-Type:application/json
+
+{
+
+    "username":"django",
+    "password":"password@123"
+}
+# -----------------------------------------------------
+# api call for fetching token 
+###
+POST http://127.0.0.1:8000/accounts/login/
+Content-Type:application/json
+
+{
+
+    "username":"react",
+    "password":"password@123"
+}
+
+# -----------------------------------------------------
+
+# api call for getting current user detail
+###
+GET  http://127.0.0.1:8000/accounts/profile/
+Accept:application/json
+# Authorization:Token b9c43897a200cc3730b935e48fd56bb12514400b
+Authorization:Token 073ba0d4cd50313ca7cbfad7d7389f8449b7788d
+
+
+# ===============Leads===========================
+
+# api call for list current user lead
+###
+GET http://127.0.0.1:8000/leads/
+Accept:application/json
+# Authorization:Token b9c43897a200cc3730b935e48fd56bb12514400b
+Authorization:Token 073ba0d4cd50313ca7cbfad7d7389f8449b7788d
+
+
+# api call for creating lead
+###
+POST http://127.0.0.1:8000/leads/
+Content-Type:application/json
+Authorization:Token 073ba0d4cd50313ca7cbfad7d7389f8449b7788d
+
+{
+    "name": "Esther",
+    "email": "esther@gmail.com",
+    "phone": "7810543211",
+    "company": "UST",
+    "source": "Referral",
+    "status": "Interested",
+    "description": "Interested in software development services"
+
+}
+
+# api call for fetching a expense
+###
+GET  http://127.0.0.1:8000/leads/1/
+Accept:application/json
+Authorization:Token 073ba0d4cd50313ca7cbfad7d7389f8449b7788d
+
+# api call for update
+###
+PUT http://127.0.0.1:8000/leads/3/
+Content-Type:application/json
+Authorization:Token 073ba0d4cd50313ca7cbfad7d7389f8449b7788d
+
+{
+    "name": "isha",
+    "email": "isha@gmail.com",
+    "phone": "7876543211",
+    "company": "Archon Solutions",
+    "source": "Referral",
+    "status": "New",
+    "description": "Interested in software development services"
+
+}
+
+# api call for delete
+###
+DELETE http://127.0.0.1:8000/leads/2/
+Accept:application/json
+Authorization:Token b9c43897a200cc3730b935e48fd56bb12514400b
+
+
+###
+PATCH http://127.0.0.1:8000/leads/3/
+Content-Type:application/json
+Authorization:Token b9c43897a200cc3730b935e48fd56bb12514400b
+
+{
+    "status": "Converted",
+    "company": "ABC Technologies"
+
+}
